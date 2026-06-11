@@ -28,14 +28,26 @@ def status_nave():
     
 
 def registrarTripulantes():
-    novoTripulante = input("Digite o nome do(a) novo(a) tripulante:")
+    novoTripulante = input("Digite o nome do(a) novo(a) tripulante: ")
     tripulantes.append(novoTripulante)
-    print("Tripulante inserido com sucesso! 🧑‍🚀")
+    print("Tripulante inserido(a) com sucesso! 🧑‍🚀")
+
+
+## Cria uma função que tira o último tripulante
+
+def removerTripulantes():
+    if len(tripulantes) > 0:
+        tripulantes.pop()
+        print("Tripulante removido com sucesso!")
+        print(tripulantes)
+
+    else:
+        print("A lista de tripulantes está vazia! Volte para o menu para adicionar um novo tripulante. 🧑‍🚀")
 
 
 print("\n ----Bem vindo ao menu interativo da nave 🚀. Por favor selecione uma opção:")
 while True: 
-    print("\n| 1- Mostrar status da nave | 2- Viajar | 3- Abastecer | 4- Novo Tripulante | 5- Sair |")
+    print("\n| 1- Mostrar status da nave | 2- Viajar | 3- Abastecer | 4- Novo Tripulante | 5- Remover Tripulante | 6- Sair |")
     opcao = input("--Digite a opção desejada: ")
     if (opcao == "1"):
         status_nave()
@@ -45,19 +57,12 @@ while True:
         abastecer()       
     elif (opcao == "4"):    
         registrarTripulantes()
+    elif (opcao == "5"):    
+        removerTripulantes()
     else:    
         print("Viagem encerrada!")
         break
 
 
-# status_nave()
-# registrarTripulantes()
-# status_nave()
 
-# viajar()
-# viajar()
-# viajar()
-# abastecer()
-# status_nave()
-# registrar_tripulantes()
 
